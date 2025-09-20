@@ -1,28 +1,23 @@
-class Book:
-    def __init__(self, name, author, rik):
+class Animal:
+    def __init__(self, name, age):
         self.name = name
-        self.author = author
-        self.rik = rik
+        self.age = age
 
-class Library:
-    def __init__(self, name):
-        self.name = name
-        self.list = []
+    def info(self):
+        print(self.name, self.age)
 
-    def add_passenger(self, book):
-        self.list.append(book)
+class Dog(Animal):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
 
-    def print_passenger(self):
-        for i in self.list:
-            print(i.name, i.author, i.rik)
+class Cat(Animal):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
 
-b1 = Book("вщпов", "пвпвк", "1999")
-b2 = Book("врвк", "упкрпкв", "2025")
-b3 = Book("крврв", "врвр", "1345")
+Gibi = Dog('Gibi', 10, 'yellow')
+Gabbi = Cat('Gabbi', 5, 'orange')
 
-lib = Library("Avrora")
-lib.add_passenger(b1)
-lib.add_passenger(b2)
-lib.add_passenger(b3)
-
-lib.print_passenger()
+Gibi.info()
+Gabbi.info()
